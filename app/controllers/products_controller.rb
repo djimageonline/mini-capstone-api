@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
 
 
-  def all_prodcuts
-    all_prodcuts = Product.all
-    render json: all_prodcuts.as_json
+  def all_products
+    all_products = Product.all
+    render json: all_products.as_json
   end
 
   # def first_product
