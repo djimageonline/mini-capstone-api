@@ -28,14 +28,14 @@ Content-Type: application/json
 
 {
 "name": "Sofa Bed",
-"price": 600,
-"image_url": "testsofabed.com",
-"description": "this is a nice sofa bed"
+"price": 800,
+"image_url": "https://cdn.shopify.com/s/files/1/0070/8342/5882/products/Rialto_Sofa_Bed_-_Dawson_Moon_-_P02_-_1024x1024_b1a536fb-b170-44f4-8556-71284815f6ca_grande.jpg?v=1621022918",
+"description": "this is a nice bed"
 }
 
 
 ### Delete
 
-DELETE http://localhost:3000/products/6
+DELETE http://localhost:3000/products/7
 Content-Type: application/json
  
