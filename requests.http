@@ -1,0 +1,41 @@
+###Index Action
+
+GET http://localhost:3000/products
+
+
+###Show Action
+
+
+GET http://localhost:3000/products/2
+
+
+###Create
+
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+"name": "test name",
+"price": 40,
+"image_url": "test.com",
+"description": "this is a test"
+}
+
+
+###  Update Action
+PATCH http://localhost:3000/products/8
+Content-Type: application/json
+
+{
+"name": "Sofa Bed",
+"price": 600,
+"image_url": "testsofabed.com",
+"description": "this is a nice sofa bed"
+}
+
+
+### Delete
+
+DELETE http://localhost:3000/products/6
+Content-Type: application/json
+ 

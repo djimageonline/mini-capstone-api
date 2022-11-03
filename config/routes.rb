@@ -5,12 +5,9 @@ Rails.application.routes.draw do
   # root "articles#index"
 
 get "/products" => "products#index"
-
-# BAD WAY
-# get "/first_product" => "products#first_product"
-# get "/second_prodcut" => "products#second_prodcut"
-# get "/third_prodcut" => "products#third_prodcut"
-
 get "/products/:id" => "products#show"
+post "/products" => "products#create"
+patch "/products/:id" => "products#update"
+delete "/products/:id" => "products#destroy"
 
 end
