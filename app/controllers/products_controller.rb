@@ -8,7 +8,9 @@ class ProductsController < ApplicationController
 
   def show
     product = Product.find_by(id: params["id"])
-    render json: product.as_json(methods: [:friendly_created_at, :is_discounted?, :tax, :total])
+    @product = product
+    render template: "products/show"
+
   end
 
   def create
@@ -21,6 +23,8 @@ class ProductsController < ApplicationController
     )
 
     product.save
+    @product = product
+
     render json: product.as_json
   end
 
@@ -34,6 +38,7 @@ class ProductsController < ApplicationController
     product.description = params[:description] || product.description
 
     product.save
+    @product = product
     render json: product.as_json
   end
 

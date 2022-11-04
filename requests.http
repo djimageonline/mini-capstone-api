@@ -6,12 +6,12 @@ GET http://localhost:3000/products
 ###Show Action
 
 
-GET http://localhost:3000/products/3
+GET http://localhost:3000/products/3.json
 
 
 ###Create
 
-POST http://localhost:3000/products
+POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
