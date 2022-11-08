@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   validates :name, uniqueness: true
   validates :price, numericality: {greater_than: 0}
   validates :description, length: {in: 10..500} 
-  #validates :quantity, presence: true
 
 
   def friendly_created_at
