@@ -5,6 +5,10 @@ class Product < ApplicationRecord
   validates :price, numericality: {greater_than: 0}
   validates :description, length: {in: 10..500} 
 
+  def images
+    Image.where(product_id: id)
+  end
+
   def supplier
     Supplier.find_by(id: supplier_id)
   end
