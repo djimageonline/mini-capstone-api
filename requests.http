@@ -1,7 +1,7 @@
 ###Index Action
 
 GET http://localhost:3000/products.json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgyODYyOTV9.s3ytpYS0pVtfaKDfCeeeZJQe_S7efz22sXxYY4yKlkk
 
 ###Show Action
 
@@ -52,4 +52,13 @@ Content-Type: application/json
   "email": "mike@test.com",
   "password": "password",
   "password_confirmation": "password"
+}
+
+### Session Create (User login)
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+
+{
+  "email": "mike@test.com",
+  "password": "password"
 }
