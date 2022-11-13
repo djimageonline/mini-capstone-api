@@ -77,8 +77,8 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "product_id": 1,
-  "quantity":  33
+  "product_id": 3,
+  "quantity":  222
 }
 
 

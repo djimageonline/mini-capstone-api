@@ -19,15 +19,6 @@ class OrdersController < ApplicationController
     else
       render json: {message: "STOP, in the Name of ... Nice Try not your order!"}
     end
-
-    if order.save
-      # render json: order.as_json
-      @order = order
-      render template: "orders/show"
-    else
-      render json: {message: order.errors.full_messages}, status: 422
-    end
-
   end
   
   def create
