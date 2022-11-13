@@ -1,15 +1,16 @@
-###Index Action
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
+
+
+
+### Product Index Action
 
 GET http://localhost:3000/products.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2NjgyODYyOTV9.s3ytpYS0pVtfaKDfCeeeZJQe_S7efz22sXxYY4yKlkk
 
-###Show Action
-
+### Product Show Action
 
 GET http://localhost:3000/products/3.json
 
-
-###Create
+### Product Create
 
 POST http://localhost:3000/products.json
 Content-Type: application/json
@@ -23,7 +24,7 @@ Content-Type: application/json
 }
 
 
-###  Update Action
+### Product Update Action
 PATCH http://localhost:3000/products/8
 Content-Type: application/json
 
@@ -35,11 +36,12 @@ Content-Type: application/json
 }
 
 
-### Delete
+### Product Delete
 
 DELETE http://localhost:3000/products/7
 Content-Type: application/json
  
+###---------------------------------------------
 
 ### Users create (signup)
 
@@ -54,6 +56,9 @@ Content-Type: application/json
   "password_confirmation": "password"
 }
 
+
+###---------------------------------------------
+
 ### Session Create (User login)
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
@@ -63,25 +68,26 @@ Content-Type: application/json
   "password": "password"
 }
 
+###---------------------------------------------
 
 ### Orders Create
 
 POST http://localhost:3000/orders.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
+Authorization: Bearer {{jwt}}
 
 {
-  "product_id": 2,
-  "quantity":  44
+  "product_id": 1,
+  "quantity":  33
 }
 
 
 ### Orders Index
 
 GET http://localhost:3000/orders.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
+Authorization: Bearer {{jwt}}
 
 ###Order Show Action
 
-GET http://localhost:3000/orders/3.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
+GET http://localhost:3000/orders/2.json
+Authorization: Bearer {{jwt}}

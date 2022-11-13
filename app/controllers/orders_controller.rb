@@ -2,18 +2,32 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @order = current_user.orders
-    render json: @order.as_json
-    #render template: "orders/index"
+    # order = current_user.orders
+    # render json: order.as_json
+    @orders = current_user.orders
+    render template: "orders/index"
   end
 
   def show
-    order = current_user.orders.find_by(id: params[:id])
-    if order
-      render json: order.as_json
+    # order = current_user.orders.find_by(id: params[:id])
+    # if order
+    #   render json: order.as_json
+    @order = current_user.orders.find_by(id: params[:id])
+    
+    if @order
+      render template: "orders/show"
     else
-      render json: {message: "STOP, in the Name of ... Nice Try!"}
+      render json: {message: "STOP, in the Name of ... Nice Try not your order!"}
     end
+
+    if order.save
+      # render json: order.as_json
+      @order = order
+      render template: "orders/show"
+    else
+      render json: {message: order.errors.full_messages}, status: 422
+    end
+
   end
   
   def create
@@ -39,5 +53,7 @@ class OrdersController < ApplicationController
     else
       render json: {errors: order.errors.full_messages}, status: :unprocessable_entity #or 422
     end
+
   end
+
 end
