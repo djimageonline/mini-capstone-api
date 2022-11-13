@@ -13,4 +13,9 @@ delete "/products/:id" => "products#destroy"
 post "/users" => "users#create"
 post "/sessions" => "sessions#create"
 
+post "/orders" => "orders#create"
+get "/orders/:id" => "orders#show"
+
 end
+
+
