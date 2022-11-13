@@ -68,20 +68,20 @@ Content-Type: application/json
 
 POST http://localhost:3000/orders.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NDY4NTl9.VSQKG6Mo0cHD6FJg62DrW0HeTLhgeJSZ1CMGPPsQSmM
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
 
 {
-  "product_id": 1,
-  "quantity":  10
+  "product_id": 2,
+  "quantity":  44
 }
 
 
 ### Orders Index
 
 GET http://localhost:3000/orders.json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
 
 ###Order Show Action
 
 GET http://localhost:3000/orders/3.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NDY4NTl9.VSQKG6Mo0cHD6FJg62DrW0HeTLhgeJSZ1CMGPPsQSmM
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
