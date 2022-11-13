@@ -1,8 +1,11 @@
 {
-  product_id: @order.product_id,
-  quantity: @order.quantity,
-  subtotal: @order.subtotal,
-  tax: @order.tax,
-  total: @order.total,
-  user_id: @order.user_id,
+  id: @order.id,
+  product_id: order.product_id,
+  quantity: order.quantity,
+  subtotal: order.subtotal,
+  tax: order.tax,
+  total: order.total,
+  url: order_url(order, format: :json),
+  created_at: @order.created_at,
+  updated_at: @order.updated_at
 }

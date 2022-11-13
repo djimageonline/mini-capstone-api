@@ -1,8 +1,10 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
 
   def index
     @order = current_user.orders
     render json: @order.as_json
+    #render template: "orders/index"
   end
 
   def show
@@ -16,6 +18,7 @@ class OrdersController < ApplicationController
   
   def create
     product = Product.find(params[:product_id])
+    
     price = product.price
 
     calc_subtotal = price * params[:quantity]
@@ -37,5 +40,4 @@ class OrdersController < ApplicationController
       render json: {errors: order.errors.full_messages}, status: :unprocessable_entity #or 422
     end
   end
-
 end
