@@ -68,16 +68,20 @@ Content-Type: application/json
 
 POST http://localhost:3000/orders.json
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NDY4NTl9.VSQKG6Mo0cHD6FJg62DrW0HeTLhgeJSZ1CMGPPsQSmM
 
 {
-  "user_id": 1,
-  "product_id": 2,
-  "quantity":  8,
-  "subtotal":  200,
-  "tax": 20,
-  "total": 150
+  "product_id": 1,
+  "quantity":  10
 }
+
+
+### Orders Index
+
+GET http://localhost:3000/orders.json
+
 
 ###Order Show Action
 
 GET http://localhost:3000/orders/3.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NDY4NTl9.VSQKG6Mo0cHD6FJg62DrW0HeTLhgeJSZ1CMGPPsQSmM

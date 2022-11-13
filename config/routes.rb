@@ -10,9 +10,13 @@ post "/products" => "products#create"
 patch "/products/:id" => "products#update"
 delete "/products/:id" => "products#destroy"
 
+# Users auth
 post "/users" => "users#create"
 post "/sessions" => "sessions#create"
 
+
+# orders
+get "/orders" => "orders#index"
 post "/orders" => "orders#create"
 get "/orders/:id" => "orders#show"
 
