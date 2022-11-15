@@ -77,8 +77,8 @@ Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
 {
-  "product_id": 3,
-  "quantity":  222
+  "product_id": 1,
+  "quantity":  555
 }
 
 
@@ -89,5 +89,5 @@ Authorization: Bearer {{jwt}}
 
 ###Order Show Action
 
-GET http://localhost:3000/orders/2.json
+GET http://localhost:3000/orders/3.json
 Authorization: Bearer {{jwt}}
