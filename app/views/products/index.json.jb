@@ -6,6 +6,7 @@
     images: product.images,
     description: product.description,
     supplier: product.supplier,
+    categories: product.categories,
     friendly_created_at: product.friendly_created_at,
     is_discounted?: product.is_discounted?,
     tax: product.tax,

@@ -1,7 +1,5 @@
 @jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
 
-
-
 ### Product Index Action
 
 GET http://localhost:3000/products.json
