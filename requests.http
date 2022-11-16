@@ -2,7 +2,7 @@
 
 ### Product Index Action
 
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=
 
 ### Product Show Action
 
