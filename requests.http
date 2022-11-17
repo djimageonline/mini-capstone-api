@@ -71,13 +71,8 @@ Content-Type: application/json
 ### Orders Create
 
 POST http://localhost:3000/orders.json
-Content-Type: application/json
 Authorization: Bearer {{jwt}}
 
-{
-  "product_id": 1,
-  "quantity":  555
-}
 
 
 ### Orders Index

@@ -26,4 +26,9 @@ class CartedProductsController < ApplicationController
 
 
   end
+
+  # def destroy
+  #   carted_product =CartedProduct.find(params[:id])
+
+
 end
