@@ -1,8 +1,8 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg0NTA2Njl9.We6ew0RK4Xd6-weypwuqsIbZ_l4EevfWT7d54AAzQZY
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg3MzE2NDB9.3z1u_IbZDgZ-wTDWIP0vS7DIlgYsqA07rs-pcBkG7kE
 
 ### Product Index Action
 
-GET http://localhost:3000/products.json?category=
+GET http://localhost:3000/products.json?category=shoes
 
 ### Product Show Action
 
@@ -89,3 +89,17 @@ Authorization: Bearer {{jwt}}
 
 GET http://localhost:3000/orders/3.json
 Authorization: Bearer {{jwt}}
+
+### Carted_Product Create
+
+POST http://localhost:3000/carted_products.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "product_id": 3,
+  "quantity": 10,
+  "user_id": 2,
+  "order_id": 1,
+  "status": "purchased"
+}

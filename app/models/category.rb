@@ -1,6 +1,6 @@
 class Category < ApplicationRecord
   has_many :category_products
-  has_many :categories, through: :category_products
+  has_many :products, through: :category_products
 
 
   ### This is harder, more code then line 3
