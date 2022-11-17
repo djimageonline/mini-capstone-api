@@ -98,8 +98,6 @@ Content-Type: application/json
 
 {
   "product_id": 3,
-  "quantity": 10,
-  "user_id": 2,
-  "order_id": 1,
-  "status": "purchased"
+  "quantity": 10
+
 }
