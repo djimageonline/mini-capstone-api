@@ -15,8 +15,6 @@ class CartedProductsController < ApplicationController
       order_id:nil,
       status: "carted"
     )
-
-    # render json: {message: "carted product created"}, status: :created
     
     if carted_product.save
       render json: carted_product.as_json
@@ -27,8 +25,11 @@ class CartedProductsController < ApplicationController
 
   end
 
-  # def destroy
-  #   carted_product =CartedProduct.find(params[:id])
-
+  def destroy
+    carted_product = CartedProduct.find(params[:id])
+    carted_product.status = "removed"
+    carted_product.save
+    render json: {message: "Carted Item has been successfully removed"}
+  end
 
 end

@@ -1,39 +1,50 @@
-@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2Njg3MzE2NDB9.3z1u_IbZDgZ-wTDWIP0vS7DIlgYsqA07rs-pcBkG7kE
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJleHAiOjE2NzExNTgxOTh9.hiEXwBMhq3pHEToUPX3cUKh_Uxk37iGS_KzDdWY1Jo4
 
 ### Product Index Action
 
-GET http://localhost:3000/products.json?category=shoes
+GET http://localhost:3000/products.json?category
 
+
+#--------------------------------------------------
 ### Product Show Action
 
 GET http://localhost:3000/products/3.json
 
+
+#--------------------------------------------------
 ### Product Create
 
 POST http://localhost:3000/products.json
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-"name": "",
-"price": 500,
-"image_url": "test.com",
-"description": "this",
-"quantity": 3
+  "name": "Lania Set",
+  "price": 2500,
+  "description": "5 Piece Set",
+  "quantity": 5,
+  "supplier_id": 2
 }
 
 
+
+#--------------------------------------------------
 ### Product Update Action
-PATCH http://localhost:3000/products/8
+PATCH http://localhost:3000/products/2
 Content-Type: application/json
+Authorization: Bearer {{jwt}}
 
 {
-"name": "test",
-"price": 5,
-"image_url": "https://cdn.shopify.com/s/files/1/0070/8342/5882/products/Rialto_Sofa_Bed_-_Dawson_Moon_-_P02_-_1024x1024_b1a536fb-b170-44f4-8556-71284815f6ca_grande.jpg?v=1621022918",
-"description": "this"
+  "name": "Lania Set",
+  "price": 2500,
+  "description": "5 Piece Set",
+  "quantity": 5,
+  "supplier_id": 2
 }
 
 
+
+#--------------------------------------------------
 ### Product Delete
 
 DELETE http://localhost:3000/products/7
@@ -48,8 +59,8 @@ Content-Type: application/json
 
 {
 
-  "name": "Mike",
-  "email": "mike@test.com",
+  "name": "JP",
+  "email": "jp@test.com",
   "password": "password",
   "password_confirmation": "password"
 }
@@ -62,7 +73,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
 
 {
-  "email": "mike@test.com",
+  "email": "jp@test.com",
   "password": "password"
 }
 
@@ -102,6 +113,12 @@ Content-Type: application/json
 
 {
   "product_id": 3,
-  "quantity": 10
+  "quantity": 1
 
 }
+
+
+### Carted Product Destroy
+DELETE http://localhost:3000/carted_products/1.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json

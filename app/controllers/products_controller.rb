@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_admin, except: [:index, :show]
+  # before_action :authenticate_admin, except: [:index, :show]
 
   def index
     @products = Product.all
@@ -19,17 +19,17 @@ class ProductsController < ApplicationController
   end
 
   def create
-    pp params
     product = Product.new(
       name:params[:name],
       price:params[:price],
-      image_url:params[:image_url],
-      description:params[:description]
+      description:params[:description],
+      quantity:params[:quantity],
+      supplier_id:params[:supplier_id]
     )
 
     if product.save
       @product = product
-      render json: product.as_json
+      render template: "products/show"
     else
       render json: {errors: product.errors.full_messages}, status: :unprocessable_entity
     end
@@ -41,8 +41,9 @@ class ProductsController < ApplicationController
 
     product.name = params[:name] || product.name
     product.price = params[:price] || product.price
-    product.image_url = params[:image_url] || product.image_url
+    product.quantity = params[:quantity] || product.quantity
     product.description = params[:description] || product.description
+    product.supplier_id = params[:supplier_id] || product.supplier_id
 
     if product.save
       @product = product
